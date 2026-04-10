@@ -236,7 +236,7 @@ credit-default-project/
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/credit-default-project.git
+git clone https://github.com/Deyvid89/credit-default-project.git
 cd credit-default-project
 
 # 2. Crie e ative um ambiente virtual
