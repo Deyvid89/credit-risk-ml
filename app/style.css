@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+:root {
+    --bg:         #0d0f14;
+    --surface:    #14171f;
+    --surface2:   #1c2030;
+    --border:     #252a3a;
+    --accent:     #4f7cff;
+    --accent-dim: #1e2e5c;
+    --text:       #e8eaf0;
+    --muted:      #7a8099;
+    --green:      #22c27a;
+    --orange:     #f59e0b;
+    --red:        #f04b4b;
+    --radius:     12px;
+}
+
+html, body, [class*="css"] {
+    font-family: 'DM Sans', sans-serif !important;
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+.block-container {
+    max-width: 1100px !important;
+    padding: 1.2rem 2rem 1rem !important;
+    margin: 0 auto !important;
+}
+
+.app-header {
+    text-align: center;
+    padding: 0.4rem 0 0.8rem;
+}
+.app-header .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+.app-header .logo span { color: var(--accent); }
+.app-header .tagline {
+    font-size: 0.9rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+}
+
+.section-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 1rem 0 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+div[data-testid="stNumberInput"] input {
+    background: var(--surface2) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    color: var(--text) !important;
+    font-size: 0.9rem !important;
+}
+label,
+div[data-testid="stNumberInput"] label,
+div[data-testid="stSlider"] label {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    color: var(--muted) !important;
+}
+
+div[data-testid="stFormSubmitButton"] > button {
+    width: 100%;
+    background: var(--accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 9px !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    padding: 0.65rem 1rem !important;
+    margin-top: 0.75rem !important;
+}
+div[data-testid="stFormSubmitButton"] > button:hover { opacity: 0.85 !important; }
+
+.score-banner {
+    background: linear-gradient(135deg, var(--accent-dim), var(--surface));
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.score-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--text);
+}
+.pill {
+    display: inline-block;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0.4rem 0 0.2rem;
+}
+.pill-green  { background:rgba(34,194,122,.15); color:#22c27a; border:1px solid #22c27a; }
+.pill-blue   { background:rgba(79,124,255,.15); color:#4f7cff; border:1px solid #4f7cff; }
+.pill-orange { background:rgba(245,158,11,.15); color:#f59e0b; border:1px solid #f59e0b; }
+.pill-red    { background:rgba(240,75,75,.15);  color:#f04b4b; border:1px solid #f04b4b; }
+.score-prob { font-size: 0.8rem; color: var(--muted); }
+
+.alert-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    margin-bottom: 0.35rem;
+}
+.alert-err  { background:rgba(240,75,75,.1);  border:1px solid rgba(240,75,75,.3);  color:#f04b4b; }
+.alert-warn { background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.3); color:#f59e0b; }
+.alert-ok   { background:rgba(34,194,122,.1); border:1px solid rgba(34,194,122,.3); color:#22c27a; }
+
+/* Métricas nativas */
+div[data-testid="stMetric"] {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.4rem 0.6rem !important;
+}
+div[data-testid="stMetricLabel"] { font-size: 0.72rem !important; color: var(--muted) !important; }
+div[data-testid="stMetricValue"] { font-size: 1.2rem !important; color: var(--text) !important; }
+
+.js-plotly-plot .plotly .main-svg { background: transparent !important; }
+section[data-testid="stSidebar"] { display: none !important; }
+button[kind="header"] { display: none !important; }
+div[data-testid="stAppViewContainer"] > section > div { padding-top: 0 !important; }
+
+@media (max-width: 640px) {
+    .block-container { padding: 1rem !important; }
+    .score-num { font-size: 3rem; }
+}
